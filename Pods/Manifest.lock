@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.7.1)
+  - Nuke (9.5.0)
+  - R.swift (7.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - Nuke (~> 9.0)
+  - R.swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Nuke
+    - R.swift
+
+SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Nuke: 6f400a4ea957e09149ec335a3c6acdcc814d89e4
+  R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
+
+PODFILE CHECKSUM: b5ee7cef03f7306a91341c612c18c5c25165752f
+
+COCOAPODS: 1.12.1
