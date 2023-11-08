@@ -14,62 +14,48 @@ final class BaseTabBarVC: UITabBarController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        //configTabBarUI()
-        self.setupTabBarUI()
-        self.addCustomTabBarView()
+        setupTabBarUI()
+        addCustomTabBarView()
     }
     
     // MARK: - GUI
-//    private func configTabBarUI() {
-//        tabBar.backgroundImage = UIImage()
-//        tabBar.backgroundColor = .white
-//        tabBar.tintColor = .black
-//        view.layer.shadowColor = UIColor.black.withAlphaComponent(0).cgColor
-//        view.layer.shadowOffset = CGSize(width: -4, height: -6)
-//        view.layer.shadowOpacity = 0.5
-//        view.layer.shadowRadius = 20
-//    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.setupCustomTabBarFrame()
+        setupCustomTabBarFrame()
     }
     
     // MARK: Private methods
-    
     private func setupCustomTabBarFrame() {
-        let height = self.view.safeAreaInsets.bottom + 64
+        let height = view.safeAreaInsets.bottom + 64
         
-        var tabFrame = self.tabBar.frame
+        var tabFrame = tabBar.frame
         tabFrame.size.height = height
-        tabFrame.origin.y = self.view.frame.size.height - height
+        tabFrame.origin.y = view.frame.size.height - height
         
-        self.tabBar.frame = tabFrame
-        self.tabBar.setNeedsLayout()
-        self.tabBar.layoutIfNeeded()
+        tabBar.frame = tabFrame
+        tabBar.setNeedsLayout()
+        tabBar.layoutIfNeeded()
         customTabBarView.frame = tabBar.frame
     }
     
     private func setupTabBarUI() {
-        // Setup your colors and corner radius
-        self.tabBar.backgroundColor = .white
-        self.tabBar.layer.cornerRadius = 30
-        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        self.tabBar.tintColor = .black
-        //self.tabBar.unselectedItemTintColor = UIColor.fillColor3
+        tabBar.backgroundColor = .white
+        tabBar.layer.cornerRadius = 30
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        tabBar.tintColor = .black
     }
     
     private func addCustomTabBarView() {
-        self.customTabBarView.frame = tabBar.frame
-        self.customTabBarView.backgroundColor = .white
-        self.customTabBarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        customTabBarView.frame = tabBar.frame
+        customTabBarView.backgroundColor = .white
+        customTabBarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        self.customTabBarView.layer.masksToBounds = false
-        self.customTabBarView.layer.shadowColor = R.color.darkGray()?.withAlphaComponent(0.08).cgColor
-        self.customTabBarView.layer.shadowOffset = CGSize(width: 0, height: -4)
-        self.customTabBarView.layer.shadowOpacity = 1
-        //self.customTabBarView.layer.shadowRadius = 20
+        customTabBarView.layer.masksToBounds = false
+        customTabBarView.layer.shadowColor = R.color.darkGray()?.withAlphaComponent(0.08).cgColor
+        customTabBarView.layer.shadowOffset = CGSize(width: 0, height: -4)
+        customTabBarView.layer.shadowOpacity = 1
         
-        self.view.addSubview(customTabBarView)
-        self.view.bringSubviewToFront(self.tabBar)
+        view.addSubview(customTabBarView)
+        view.bringSubviewToFront(tabBar)
     }
 }

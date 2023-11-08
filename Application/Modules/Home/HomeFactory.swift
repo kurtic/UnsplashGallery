@@ -14,7 +14,7 @@ final class HomeFactory: BaseFactory {
     
     func makeHomeVC<T: Coordinator & HomePresenterDelegate>(delegate: T) -> HomeVC {
         makeController(delegate) {
-            $0.setPresenter(presenter: HomePresenter())
+            $0.setPresenter(presenter: HomePresenter(useCases: delegate.useCases, delegate: delegate))
         }
     }
 }

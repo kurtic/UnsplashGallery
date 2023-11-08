@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2B4E7C370BF71BFABCC751AF /* Pods_UnsplashGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF85B5AC342C28BAD2B0E760 /* Pods_UnsplashGallery.framework */; };
+		5882EE052AFBC0C3007043BD /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5882EE042AFBC0C3007043BD /* Photo.swift */; };
+		5882EE072AFBCF1C007043BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5882EE062AFBCF1C007043BD /* User.swift */; };
+		5882EE0B2AFBE988007043BD /* PhotosData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5882EE0A2AFBE988007043BD /* PhotosData.swift */; };
 		58BE6B512AFA430F006A0BDB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE6B502AFA430F006A0BDB /* AppCoordinator.swift */; };
 		58BE6B542AFA435E006A0BDB /* UseCasesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE6B532AFA435E006A0BDB /* UseCasesProvider.swift */; };
 		58BE6B572AFA4403006A0BDB /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE6B562AFA4403006A0BDB /* PhotosService.swift */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		0AF0E7F97ED9ABBBCE042DE1 /* Pods-UnsplashGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashGallery.release.xcconfig"; path = "Target Support Files/Pods-UnsplashGallery/Pods-UnsplashGallery.release.xcconfig"; sourceTree = "<group>"; };
+		5882EE042AFBC0C3007043BD /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		5882EE062AFBCF1C007043BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5882EE0A2AFBE988007043BD /* PhotosData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosData.swift; sourceTree = "<group>"; };
 		58BE6B502AFA430F006A0BDB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		58BE6B532AFA435E006A0BDB /* UseCasesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesProvider.swift; sourceTree = "<group>"; };
 		58BE6B562AFA4403006A0BDB /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
@@ -95,6 +101,16 @@
 				0AF0E7F97ED9ABBBCE042DE1 /* Pods-UnsplashGallery.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5882EE032AFBC0AE007043BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5882EE042AFBC0C3007043BD /* Photo.swift */,
+				5882EE062AFBCF1C007043BD /* User.swift */,
+				5882EE0A2AFBE988007043BD /* PhotosData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		58BE6B522AFA433E006A0BDB /* Base */ = {
@@ -196,6 +212,7 @@
 				58BE6B582AFA44E7006A0BDB /* Modules */,
 				58BE6B522AFA433E006A0BDB /* Base */,
 				58C7B1592AF974E1003B91D8 /* Resources */,
+				5882EE032AFBC0AE007043BD /* Models */,
 				58BE6B552AFA43D7006A0BDB /* Services */,
 				58C7B1662AF9750B003B91D8 /* UnsplashGallery.xcdatamodeld */,
 			);
@@ -353,6 +370,7 @@
 				58BE6B542AFA435E006A0BDB /* UseCasesProvider.swift in Sources */,
 				58BE6B6D2AFA5881006A0BDB /* Factory.swift in Sources */,
 				58BE6B672AFA55C2006A0BDB /* BaseTabBarVC.swift in Sources */,
+				5882EE0B2AFBE988007043BD /* PhotosData.swift in Sources */,
 				58BE6B632AFA4E08006A0BDB /* R.generated.swift in Sources */,
 				58BE6B6F2AFA58B3006A0BDB /* HomeFactory.swift in Sources */,
 				58BE6B7F2AFA6681006A0BDB /* FavouriteVC.swift in Sources */,
@@ -364,9 +382,11 @@
 				58BE6B752AFA595C006A0BDB /* UseCasesConsumer.swift in Sources */,
 				58BE6B7B2AFA5A65006A0BDB /* HomePresenter.swift in Sources */,
 				58BE6B832AFA66B1006A0BDB /* FavouriteCoordinator.swift in Sources */,
+				5882EE052AFBC0C3007043BD /* Photo.swift in Sources */,
 				58BE6B572AFA4403006A0BDB /* PhotosService.swift in Sources */,
 				58BE6B712AFA58FD006A0BDB /* BaseFactory.swift in Sources */,
 				58BE6B812AFA669B006A0BDB /* FavouritePresenter.swift in Sources */,
+				5882EE072AFBCF1C007043BD /* User.swift in Sources */,
 				58BE6B6B2AFA56E5006A0BDB /* HomeCoordinator.swift in Sources */,
 				58C7B1682AF9750B003B91D8 /* UnsplashGallery.xcdatamodeld in Sources */,
 				58C7B1652AF974E1003B91D8 /* AppDelegate.swift in Sources */,
