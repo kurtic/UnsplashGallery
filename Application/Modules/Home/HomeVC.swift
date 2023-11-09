@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CHTCollectionViewWaterfallLayout
 
 extension HomeVC: Makeable {
     static func make() -> HomeVC { R.storyboard.home.homeVC()! }
@@ -17,7 +18,8 @@ protocol HomeVCDelegate: AnyObject {
 
 final class HomeVC: UIViewController {
     // MARK: - IBOutlets
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
     // MARK: - Private properties
     private var presenter: HomePresenter?
@@ -27,10 +29,23 @@ final class HomeVC: UIViewController {
         super.viewDidLoad()
         presenter?.setViewDelegate(delegate: self)
         presenter?.fetchPhotos()
+        setupCollectionView()
+        navigationController?.isNavigationBarHidden = true
+        searchBar.searchTextField.
     }
     
     func setPresenter(presenter: HomePresenter) {
         self.presenter = presenter
+    }
+    
+    private func setupCollectionView() {
+        let layout = CHTCollectionViewWaterfallLayout()
+        layout.itemRenderDirection = .leftToRight
+        layout.columnCount = 2
+        layout.minimumInteritemSpacing = 7
+        layout.minimumColumnSpacing = 7
+        collectionView.collectionViewLayout = layout
+        collectionView.registerNib(for: HomeImageCVC.self)
     }
 }
 
@@ -41,7 +56,17 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeImageCVC.self),
+                                                            for: indexPath) as? HomeImageCVC else { return UICollectionViewCell() }
+        cell.configure(imageLink: presenter?.photos[indexPath.row].imageUrl)
+        return cell
+    }
+}
+
+// MARK: - CHTCollectionViewDelegateWaterfallLayout
+extension HomeVC: CHTCollectionViewDelegateWaterfallLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: view.frame.width/2, height: CGFloat.random(in: 300...500))
     }
 }
 

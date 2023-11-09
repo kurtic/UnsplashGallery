@@ -10,6 +10,7 @@ target 'UnsplashGallery' do
   # Utils
   pod 'Alamofire'
   pod 'Nuke', '~> 9.0'
+  pod 'CHTCollectionViewWaterfallLayout'
 
   # Code generation
   pod 'R.swift'

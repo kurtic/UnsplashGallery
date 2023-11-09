@@ -40,6 +40,7 @@ final class BaseTabBarVC: UITabBarController {
     
     private func setupTabBarUI() {
         tabBar.backgroundColor = .white
+        tabBar.isTranslucent = false
         tabBar.layer.cornerRadius = 30
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         tabBar.tintColor = .black

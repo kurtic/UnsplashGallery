@@ -18,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EWQ-QD-lXw">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EWQ-QD-lXw">
+                                <rect key="frame" x="24" y="115" width="345" height="737"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dZb-ke-boH">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -29,10 +29,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6Gj-q5-0z3">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZvN-mZ-eZK">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -42,31 +42,51 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="rab-Uv-ImZ"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTD-oU-H1k">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Пошук" translatesAutoresizingMaskIntoConstraints="NO" id="zbQ-g9-QXg">
+                                <rect key="frame" x="16" y="59" width="361" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="DEX-oH-3xq"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="kt1-pc-VaP"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EWQ-QD-lXw" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="axo-SE-BK1"/>
+                            <constraint firstItem="zbQ-g9-QXg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="AgA-30-LKP"/>
+                            <constraint firstAttribute="trailing" secondItem="RTD-oU-H1k" secondAttribute="trailing" id="X2K-Bp-2qA"/>
                             <constraint firstAttribute="bottom" secondItem="EWQ-QD-lXw" secondAttribute="bottom" id="eBv-sW-Y07"/>
-                            <constraint firstAttribute="trailing" secondItem="EWQ-QD-lXw" secondAttribute="trailing" id="gGx-Eo-OpT"/>
-                            <constraint firstItem="EWQ-QD-lXw" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="w7E-E8-GUd"/>
+                            <constraint firstItem="EWQ-QD-lXw" firstAttribute="top" secondItem="zbQ-g9-QXg" secondAttribute="bottom" id="fei-qf-sI9"/>
+                            <constraint firstAttribute="trailing" secondItem="EWQ-QD-lXw" secondAttribute="trailing" constant="24" id="gGx-Eo-OpT"/>
+                            <constraint firstItem="RTD-oU-H1k" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="hHI-44-zRd"/>
+                            <constraint firstItem="zbQ-g9-QXg" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-16" id="iGV-Yv-Jus"/>
+                            <constraint firstItem="zbQ-g9-QXg" firstAttribute="top" secondItem="RTD-oU-H1k" secondAttribute="bottom" id="npJ-zu-Xc0"/>
+                            <constraint firstItem="RTD-oU-H1k" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="qPh-1Z-0nl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="RTD-oU-H1k" secondAttribute="bottom" id="uBn-TX-gFz"/>
+                            <constraint firstItem="EWQ-QD-lXw" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="24" id="w7E-E8-GUd"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="EWQ-QD-lXw" id="HS9-7e-InA"/>
+                        <outlet property="searchBar" destination="zbQ-g9-QXg" id="nSs-RL-agC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-2"/>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
