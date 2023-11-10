@@ -47,6 +47,8 @@
 		58C9B1202AFE60300000A2C4 /* DateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C9B11F2AFE60300000A2C4 /* DateFormatter+Utils.swift */; };
 		58C9B1222AFE60E00000A2C4 /* DateCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C9B1212AFE60E00000A2C4 /* DateCoder.swift */; };
 		58C9B1292AFE789D0000A2C4 /* PhotoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C9B1272AFE789D0000A2C4 /* PhotoEntity+CoreDataProperties.swift */; };
+		58C9B12D2AFEAA0A0000A2C4 /* FavouriteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C9B12B2AFEAA0A0000A2C4 /* FavouriteCVC.swift */; };
+		58C9B12E2AFEAA0A0000A2C4 /* FavouriteCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C9B12C2AFEAA0A0000A2C4 /* FavouriteCVC.xib */; };
 		58CC7B872AFD21D900D128E1 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CC7B862AFD21D900D128E1 /* BaseVC.swift */; };
 		58CC7B8A2AFD3C6B00D128E1 /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CC7B892AFD3C6B00D128E1 /* PhotoDetailVC.swift */; };
 		58CC7B8C2AFD3CC200D128E1 /* PhotoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CC7B8B2AFD3CC200D128E1 /* PhotoDetail.storyboard */; };
@@ -95,6 +97,8 @@
 		58C9B11F2AFE60300000A2C4 /* DateFormatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utils.swift"; sourceTree = "<group>"; };
 		58C9B1212AFE60E00000A2C4 /* DateCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCoder.swift; sourceTree = "<group>"; };
 		58C9B1272AFE789D0000A2C4 /* PhotoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PhotoEntity+CoreDataProperties.swift"; path = "Application/PhotoEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		58C9B12B2AFEAA0A0000A2C4 /* FavouriteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCVC.swift; sourceTree = "<group>"; };
+		58C9B12C2AFEAA0A0000A2C4 /* FavouriteCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCVC.xib; sourceTree = "<group>"; };
 		58CC7B862AFD21D900D128E1 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		58CC7B892AFD3C6B00D128E1 /* PhotoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
 		58CC7B8B2AFD3CC200D128E1 /* PhotoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoDetail.storyboard; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 		58BE6B692AFA567D006A0BDB /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
+				58C9B12A2AFEA9C00000A2C4 /* FavouriteCVC */,
 				58BE6B7E2AFA6681006A0BDB /* FavouriteVC.swift */,
 				58BE6B802AFA669B006A0BDB /* FavouritePresenter.swift */,
 				58BE6B822AFA66B1006A0BDB /* FavouriteCoordinator.swift */,
@@ -309,6 +314,15 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		58C9B12A2AFEA9C00000A2C4 /* FavouriteCVC */ = {
+			isa = PBXGroup;
+			children = (
+				58C9B12B2AFEAA0A0000A2C4 /* FavouriteCVC.swift */,
+				58C9B12C2AFEAA0A0000A2C4 /* FavouriteCVC.xib */,
+			);
+			path = FavouriteCVC;
+			sourceTree = "<group>";
+		};
 		58CC7B882AFD3C1600D128E1 /* PhotoDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58CC7B8C2AFD3CC200D128E1 /* PhotoDetail.storyboard in Resources */,
+				58C9B12E2AFEAA0A0000A2C4 /* FavouriteCVC.xib in Resources */,
 				58C7B1612AF974E1003B91D8 /* Assets.xcassets in Resources */,
 				5882EE132AFC108A007043BD /* HomeImageCVC.xib in Resources */,
 				58BE6B872AFA66DF006A0BDB /* Favourite.storyboard in Resources */,
@@ -478,6 +493,7 @@
 				58BE6B732AFA592A006A0BDB /* Makeable.swift in Sources */,
 				58BE6B512AFA430F006A0BDB /* AppCoordinator.swift in Sources */,
 				58BE6B772AFA5A1F006A0BDB /* HomeVC.swift in Sources */,
+				58C9B12D2AFEAA0A0000A2C4 /* FavouriteCVC.swift in Sources */,
 				58BE6B752AFA595C006A0BDB /* UseCasesConsumer.swift in Sources */,
 				58BE6B7B2AFA5A65006A0BDB /* HomePresenter.swift in Sources */,
 				58BE6B832AFA66B1006A0BDB /* FavouriteCoordinator.swift in Sources */,

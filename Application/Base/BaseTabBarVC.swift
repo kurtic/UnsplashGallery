@@ -14,8 +14,9 @@ final class BaseTabBarVC: UITabBarController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTabBarUI()
+        
         addCustomTabBarView()
+        setupTabBarUI()
     }
     
     // MARK: - GUI
@@ -26,12 +27,15 @@ final class BaseTabBarVC: UITabBarController {
     
     // MARK: Private methods
     private func setupCustomTabBarFrame() {
-        let height = view.safeAreaInsets.bottom + 64
+        let height = view.safeAreaInsets.bottom + 55
         
         var tabFrame = tabBar.frame
         tabFrame.size.height = height
         tabFrame.origin.y = view.frame.size.height - height
         
+        tabBar.items?.forEach {
+            $0.titlePositionAdjustment.vertical = -5
+        }
         tabBar.frame = tabFrame
         tabBar.setNeedsLayout()
         tabBar.layoutIfNeeded()
@@ -41,9 +45,8 @@ final class BaseTabBarVC: UITabBarController {
     private func setupTabBarUI() {
         tabBar.backgroundColor = .white
         tabBar.isTranslucent = false
-        tabBar.layer.cornerRadius = 30
         tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        tabBar.tintColor = .black
+        tabBar.tintColor = R.color.darkGray()
     }
     
     private func addCustomTabBarView() {

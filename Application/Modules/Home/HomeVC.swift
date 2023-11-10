@@ -65,8 +65,8 @@ final class HomeVC: BaseVC {
         let layout = CHTCollectionViewWaterfallLayout()
         layout.itemRenderDirection = .leftToRight
         layout.columnCount = 2
-        layout.minimumInteritemSpacing = 7
-        layout.minimumColumnSpacing = 7
+        layout.minimumInteritemSpacing = 10
+        layout.minimumColumnSpacing = 10
         collectionView.collectionViewLayout = layout
         collectionView.registerNib(for: HomeImageCVC.self)
     }
