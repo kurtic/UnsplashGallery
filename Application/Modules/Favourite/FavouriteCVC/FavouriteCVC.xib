@@ -27,24 +27,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="251" height="224"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V6u-dR-c80">
-                                <rect key="frame" x="0.0" y="0.0" width="251" height="164"/>
+                                <rect key="frame" x="0.0" y="0.0" width="251" height="173.33333333333334"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iEZ-gj-7X4">
-                                <rect key="frame" x="0.0" y="172" width="20" height="20"/>
+                                <rect key="frame" x="0.0" y="181.33333333333334" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Az3-GD-Sl7"/>
                                     <constraint firstAttribute="width" secondItem="iEZ-gj-7X4" secondAttribute="height" multiplier="1:1" id="fEr-PB-Dd7"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFilledHeart" translatesAutoresizingMaskIntoConstraints="NO" id="l7i-b6-yPb">
-                                <rect key="frame" x="231" y="172" width="20" height="20"/>
+                                <rect key="frame" x="231" y="181.33333333333334" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="7fD-QZ-vnb"/>
                                     <constraint firstAttribute="width" secondItem="l7i-b6-yPb" secondAttribute="height" multiplier="1:1" id="zq0-SO-mfP"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Zahra Omer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfK-7I-AhT">
-                                <rect key="frame" x="28" y="173.33333333333334" width="195" height="17.333333333333343"/>
+                                <rect key="frame" x="28" y="182.66666666666666" width="195" height="17.333333333333343"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                             <constraint firstItem="iEZ-gj-7X4" firstAttribute="leading" secondItem="McN-Tl-vTO" secondAttribute="leading" id="ZRt-BV-LvS"/>
                             <constraint firstItem="AfK-7I-AhT" firstAttribute="centerY" secondItem="iEZ-gj-7X4" secondAttribute="centerY" id="eeb-Hz-yMh"/>
                             <constraint firstItem="l7i-b6-yPb" firstAttribute="top" secondItem="V6u-dR-c80" secondAttribute="bottom" constant="8" id="lmX-uV-qer"/>
-                            <constraint firstAttribute="bottom" secondItem="AfK-7I-AhT" secondAttribute="bottom" constant="33.329999999999998" id="rTK-sU-R8J"/>
+                            <constraint firstAttribute="bottom" secondItem="AfK-7I-AhT" secondAttribute="bottom" constant="24" id="rTK-sU-R8J"/>
                             <constraint firstItem="V6u-dR-c80" firstAttribute="leading" secondItem="McN-Tl-vTO" secondAttribute="leading" id="s3w-BZ-O99"/>
                             <constraint firstItem="V6u-dR-c80" firstAttribute="top" secondItem="McN-Tl-vTO" secondAttribute="top" id="t04-sb-ZWJ"/>
                         </constraints>

@@ -16,6 +16,11 @@ protocol FavouriteViewDelegate: AnyObject {
 }
 
 final class FavouriteVC: UIViewController {
+    
+    private enum C {
+        static let spacing: CGFloat = 10
+    }
+    
     private var presenter: FavouritePresenter?
     
     // MARK: - IBOutlets
@@ -50,21 +55,12 @@ extension FavouriteVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.configure(with: photo)
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        5
-    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension FavouriteVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let spacing: CGFloat = 10
-        let itemWidth = (collectionView.bounds.width - spacing) / 2
+        let itemWidth = (collectionView.bounds.width - C.spacing) / 2
         let itemSize = CGSize(width: itemWidth, height: itemWidth * 1.3)
         return itemSize
     }
