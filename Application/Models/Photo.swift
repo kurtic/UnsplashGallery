@@ -14,7 +14,7 @@ struct Photo {
     let authorName: String?
     let authorImageLinkUrl: String?
     let likes: Int
-    let isFavourite: Bool = false
+    var isFavourite: Bool = false
     
     var likesAmountText: String {
         "\(likes.formatted()) likes"
@@ -49,5 +49,14 @@ struct Photo {
         authorName = response.user?.name
         authorImageLinkUrl = response.user?.profileImg.small
         likes = response.likes
+    }
+    
+    init(from entity: PhotoEntity) {
+        id = entity.id
+        createdAt = entity.createdAt ?? Date()
+        imageUrl = entity.imageUrl
+        authorName = entity.authorName
+        authorImageLinkUrl = entity.authorImageLinkUrl
+        likes = Int(entity.likes)
     }
 }

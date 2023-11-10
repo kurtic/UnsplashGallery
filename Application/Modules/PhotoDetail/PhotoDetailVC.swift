@@ -15,7 +15,7 @@ extension PhotoDetailVC: Makeable {
 }
 
 protocol PhotoDetailViewDelegate: AnyObject {
-    // WIP
+    func updateFavouriteButton()
 }
 
 final class PhotoDetailVC: UIViewController {
@@ -42,7 +42,7 @@ final class PhotoDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        // Do any additional setup after loading the view.
+        presenter?.checkIfPhotoIsFavorite()
     }
     
     // MARK: - Setup UI
@@ -75,11 +75,14 @@ final class PhotoDetailVC: UIViewController {
     }
     
     @IBAction private func likeButtonTapped(_ sender: Any) {
-        // WIP
+        presenter?.favouriteButtonTapped()
     }
 }
 
 // MARK: - PhotoDetailViewDelegate
 extension PhotoDetailVC: PhotoDetailViewDelegate {
-    // WIP
+    func updateFavouriteButton() {
+        let buttonImage = (presenter?.photo.isFavourite ?? false) ? R.image.icFilledHeart()! : R.image.icLike()!
+        likeButton.setImage(buttonImage, for: .normal)
+    }
 }
