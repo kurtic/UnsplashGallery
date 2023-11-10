@@ -32,6 +32,14 @@ final class HomeCoordinator: Coordinator {
 
 // MARK: - HomePresenterDelegate
 extension HomeCoordinator: HomePresenterDelegate {
+    func openPhotoDetails(for photo: Photo) {
+        let photoDetailsVC = Factory.homeFactory.makePhotoDetailsVC(delegate: self, photo: photo)
+        presenter.pushViewController(photoDetailsVC, animated: true)
+    }
+}
+
+// MARK: - PhotoDetailPresenterDelegate
+extension HomeCoordinator: PhotoDetailPresenterDelegate {
     // WIP
 }
 

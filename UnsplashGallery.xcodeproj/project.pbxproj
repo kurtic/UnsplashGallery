@@ -39,6 +39,16 @@
 		58C7B1612AF974E1003B91D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C7B15A2AF974E1003B91D8 /* Assets.xcassets */; };
 		58C7B1652AF974E1003B91D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7B1602AF974E1003B91D8 /* AppDelegate.swift */; };
 		58C7B1682AF9750B003B91D8 /* UnsplashGallery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58C7B1662AF9750B003B91D8 /* UnsplashGallery.xcdatamodeld */; };
+		58C9B1182AFD84660000A2C4 /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58C9B1152AFD841D0000A2C4 /* ProximaNova-Bold.ttf */; };
+		58C9B1192AFD846B0000A2C4 /* ProximaNova-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58C9B1162AFD842F0000A2C4 /* ProximaNova-Semibold.ttf */; };
+		58C9B11A2AFD84770000A2C4 /* ProximaNova-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58C9B1172AFD84370000A2C4 /* ProximaNova-Regular.ttf */; };
+		58C9B11C2AFD8BD70000A2C4 /* PhotoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C9B11B2AFD8BD70000A2C4 /* PhotoDetailPresenter.swift */; };
+		58C9B11E2AFE5FEE0000A2C4 /* ISO8601DateCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C9B11D2AFE5FEE0000A2C4 /* ISO8601DateCoder.swift */; };
+		58C9B1202AFE60300000A2C4 /* DateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C9B11F2AFE60300000A2C4 /* DateFormatter+Utils.swift */; };
+		58C9B1222AFE60E00000A2C4 /* DateCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C9B1212AFE60E00000A2C4 /* DateCoder.swift */; };
+		58CC7B872AFD21D900D128E1 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CC7B862AFD21D900D128E1 /* BaseVC.swift */; };
+		58CC7B8A2AFD3C6B00D128E1 /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CC7B892AFD3C6B00D128E1 /* PhotoDetailVC.swift */; };
+		58CC7B8C2AFD3CC200D128E1 /* PhotoDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CC7B8B2AFD3CC200D128E1 /* PhotoDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +86,16 @@
 		58C7B15F2AF974E1003B91D8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C7B1602AF974E1003B91D8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58C7B1672AF9750B003B91D8 /* UnsplashGallery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnsplashGallery.xcdatamodel; sourceTree = "<group>"; };
+		58C9B1152AFD841D0000A2C4 /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
+		58C9B1162AFD842F0000A2C4 /* ProximaNova-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.ttf"; sourceTree = "<group>"; };
+		58C9B1172AFD84370000A2C4 /* ProximaNova-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.ttf"; sourceTree = "<group>"; };
+		58C9B11B2AFD8BD70000A2C4 /* PhotoDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailPresenter.swift; sourceTree = "<group>"; };
+		58C9B11D2AFE5FEE0000A2C4 /* ISO8601DateCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO8601DateCoder.swift; sourceTree = "<group>"; };
+		58C9B11F2AFE60300000A2C4 /* DateFormatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utils.swift"; sourceTree = "<group>"; };
+		58C9B1212AFE60E00000A2C4 /* DateCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCoder.swift; sourceTree = "<group>"; };
+		58CC7B862AFD21D900D128E1 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		58CC7B892AFD3C6B00D128E1 /* PhotoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
+		58CC7B8B2AFD3CC200D128E1 /* PhotoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoDetail.storyboard; sourceTree = "<group>"; };
 		5E4A1360D33C5BEEDE0F97D6 /* Pods-UnsplashGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashGallery.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashGallery/Pods-UnsplashGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		BF85B5AC342C28BAD2B0E760 /* Pods_UnsplashGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				5882EE0D2AFC0E91007043BD /* UICollectionView+Utils.swift */,
+				58C9B11F2AFE60300000A2C4 /* DateFormatter+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,6 +167,7 @@
 				58BE6B702AFA58FD006A0BDB /* BaseFactory.swift */,
 				58BE6B722AFA592A006A0BDB /* Makeable.swift */,
 				58BE6B742AFA595C006A0BDB /* UseCasesConsumer.swift */,
+				58CC7B862AFD21D900D128E1 /* BaseVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -162,6 +184,7 @@
 		58BE6B582AFA44E7006A0BDB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				58CC7B882AFD3C1600D128E1 /* PhotoDetail */,
 				58BE6B692AFA567D006A0BDB /* Favourite */,
 				58BE6B682AFA5672006A0BDB /* Home */,
 				58BE6B592AFA4509006A0BDB /* Main */,
@@ -236,6 +259,7 @@
 				5882EE0C2AFC0E6A007043BD /* Extensions */,
 				58BE6B582AFA44E7006A0BDB /* Modules */,
 				58BE6B522AFA433E006A0BDB /* Base */,
+				58C9B1232AFE624F0000A2C4 /* Utils */,
 				58C7B1592AF974E1003B91D8 /* Resources */,
 				5882EE032AFBC0AE007043BD /* Models */,
 				58BE6B552AFA43D7006A0BDB /* Services */,
@@ -247,11 +271,41 @@
 		58C7B1592AF974E1003B91D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				58C9B1112AFD80910000A2C4 /* Fonts */,
 				58BE6B5F2AFA4DD8006A0BDB /* Generated */,
 				58C7B15A2AF974E1003B91D8 /* Assets.xcassets */,
 				58C7B15F2AF974E1003B91D8 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		58C9B1112AFD80910000A2C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				58C9B1152AFD841D0000A2C4 /* ProximaNova-Bold.ttf */,
+				58C9B1162AFD842F0000A2C4 /* ProximaNova-Semibold.ttf */,
+				58C9B1172AFD84370000A2C4 /* ProximaNova-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		58C9B1232AFE624F0000A2C4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				58C9B11D2AFE5FEE0000A2C4 /* ISO8601DateCoder.swift */,
+				58C9B1212AFE60E00000A2C4 /* DateCoder.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		58CC7B882AFD3C1600D128E1 /* PhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				58CC7B892AFD3C6B00D128E1 /* PhotoDetailVC.swift */,
+				58C9B11B2AFD8BD70000A2C4 /* PhotoDetailPresenter.swift */,
+				58CC7B8B2AFD3CC200D128E1 /* PhotoDetail.storyboard */,
+			);
+			path = PhotoDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,9 +369,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58CC7B8C2AFD3CC200D128E1 /* PhotoDetail.storyboard in Resources */,
 				58C7B1612AF974E1003B91D8 /* Assets.xcassets in Resources */,
 				5882EE132AFC108A007043BD /* HomeImageCVC.xib in Resources */,
 				58BE6B872AFA66DF006A0BDB /* Favourite.storyboard in Resources */,
+				58C9B1192AFD846B0000A2C4 /* ProximaNova-Semibold.ttf in Resources */,
+				58C9B1182AFD84660000A2C4 /* ProximaNova-Bold.ttf in Resources */,
+				58C9B11A2AFD84770000A2C4 /* ProximaNova-Regular.ttf in Resources */,
 				58BE6B792AFA5A33006A0BDB /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,10 +453,13 @@
 				58BE6B652AFA556D006A0BDB /* Coordinator.swift in Sources */,
 				58BE6B542AFA435E006A0BDB /* UseCasesProvider.swift in Sources */,
 				58BE6B6D2AFA5881006A0BDB /* Factory.swift in Sources */,
+				58C9B1222AFE60E00000A2C4 /* DateCoder.swift in Sources */,
 				58BE6B672AFA55C2006A0BDB /* BaseTabBarVC.swift in Sources */,
 				5882EE0B2AFBE988007043BD /* PhotosData.swift in Sources */,
+				58C9B1202AFE60300000A2C4 /* DateFormatter+Utils.swift in Sources */,
 				58BE6B632AFA4E08006A0BDB /* R.generated.swift in Sources */,
 				58BE6B6F2AFA58B3006A0BDB /* HomeFactory.swift in Sources */,
+				58C9B11C2AFD8BD70000A2C4 /* PhotoDetailPresenter.swift in Sources */,
 				58BE6B7F2AFA6681006A0BDB /* FavouriteVC.swift in Sources */,
 				58BE6B852AFA66CD006A0BDB /* FavouriteFactory.swift in Sources */,
 				58BE6B5B2AFA4569006A0BDB /* MainCoordinator.swift in Sources */,
@@ -409,7 +470,10 @@
 				58BE6B7B2AFA5A65006A0BDB /* HomePresenter.swift in Sources */,
 				58BE6B832AFA66B1006A0BDB /* FavouriteCoordinator.swift in Sources */,
 				5882EE052AFBC0C3007043BD /* Photo.swift in Sources */,
+				58CC7B8A2AFD3C6B00D128E1 /* PhotoDetailVC.swift in Sources */,
 				5882EE0E2AFC0E91007043BD /* UICollectionView+Utils.swift in Sources */,
+				58C9B11E2AFE5FEE0000A2C4 /* ISO8601DateCoder.swift in Sources */,
+				58CC7B872AFD21D900D128E1 /* BaseVC.swift in Sources */,
 				58BE6B572AFA4403006A0BDB /* PhotosService.swift in Sources */,
 				58BE6B712AFA58FD006A0BDB /* BaseFactory.swift in Sources */,
 				58BE6B812AFA669B006A0BDB /* FavouritePresenter.swift in Sources */,

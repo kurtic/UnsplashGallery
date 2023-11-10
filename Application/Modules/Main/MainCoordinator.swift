@@ -13,9 +13,9 @@ enum TabBarType: Int, CaseIterable {
     var tabBarItem: UITabBarItem {
         switch self {
         case .home:
-            return UITabBarItem(title: "Home", image: R.image.icHome(), selectedImage: R.image.icHomeSelected())
+            return UITabBarItem(title: "Home", image: R.image.icHome(), selectedImage: nil)
         case .favourite:
-            return UITabBarItem(title: "Favourite", image: R.image.icHeart(), selectedImage: R.image.icHeartSelected())
+            return UITabBarItem(title: "Favourite", image: R.image.icHeart(), selectedImage: nil)
         }
     }
 }

@@ -9,19 +9,31 @@ import Foundation
 
 struct Photo {
     let id: String
-    let promotedAt: String?
+    let createdAt: Date
     let imageUrl: String?
-    let user: User?
+    let authorName: String?
+    let authorImageLinkUrl: String?
+    let likes: Int
+    let isFavourite: Bool = false
+    
+    var likesAmountText: String {
+        "\(likes.formatted()) likes"
+    }
+    
+    var publishedDateStringRepresentable: String {
+        "Published on " + DateFormatter.uiDateFormat.string(from: createdAt)
+    }
     
     struct Response: Decodable {
         let id: String
-        let promotedAt: String?
+        let createdAt: ISO8601DateCoder
         let imageUrl: ImageUrl?
-        let user: User.Response?
+        let user: User?
+        let likes: Int
         
         private enum CodingKeys: String, CodingKey {
-            case id, user
-            case promotedAt = "promoted_at"
+            case id, user, likes
+            case createdAt = "created_at"
             case imageUrl = "urls"
         }
         
@@ -32,8 +44,10 @@ struct Photo {
     
     init(from response: Response) {
         id = response.id
-        promotedAt = response.promotedAt
+        createdAt = response.createdAt.value
         imageUrl = response.imageUrl?.regular
-        user = User(from: response.user!)
+        authorName = response.user?.name
+        authorImageLinkUrl = response.user?.profileImg.small
+        likes = response.likes
     }
 }
