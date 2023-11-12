@@ -20,7 +20,7 @@ final class HomePresenter {
     private var cancellable = Set<AnyCancellable>()
     private weak var delegate: HomePresenterDelegate?
     private weak var homeViewDelegate: HomeVCDelegate?
-    private let query = CurrentValueSubject<String, Never>("")
+    private(set) var query = CurrentValueSubject<String, Never>("")
     
     
     // MARK: - Life Cycle
@@ -30,10 +30,9 @@ final class HomePresenter {
         self.delegate = delegate
         
         query
-            .dropFirst()
-            .debounce(for: .seconds(0.75), scheduler: RunLoop.main)
+            .removeDuplicates()
             .sink { _ in } receiveValue: { [weak self] query in
-                self?.fetchPhotos(for: query)
+                self?.fetchPhotos()
             }
             .store(in: &cancellable)
     }
@@ -42,11 +41,13 @@ final class HomePresenter {
         homeViewDelegate = delegate
     }
     
-    func fetchPhotos(for query: String = "") {
+    func fetchPhotos() {
         homeViewDelegate?.showOrHideAcivity(shouldHide: false)
-        useCases.photos.fetchPhotos(query: query)
+        useCases.photos.fetchPhotos(query: query.value)
             .sink { [weak self] result in
                 if case .failure(_) = result {
+                    self?.photos = []
+                    self?.homeViewDelegate?.updatePhotos()
                     self?.homeViewDelegate?.showOrHideAcivity(shouldHide: true)
                 }
             } receiveValue: { [weak self] photos in

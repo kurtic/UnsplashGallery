@@ -14,7 +14,7 @@ final class FavouriteFactory: BaseFactory {
     
     func makeFavouriteVC<T: Coordinator & FavouritePresenterDelegate>(delegate: T) -> FavouriteVC {
         makeController(delegate) {
-            $0.setPresenter(presenter: FavouritePresenter(useCases: delegate.useCases))
+            $0.setPresenter(presenter: FavouritePresenter(useCases: delegate.useCases, delegate: delegate))
         }
     }
 }

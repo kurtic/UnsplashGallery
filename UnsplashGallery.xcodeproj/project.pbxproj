@@ -14,6 +14,7 @@
 		5882EE0E2AFC0E91007043BD /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5882EE0D2AFC0E91007043BD /* UICollectionView+Utils.swift */; };
 		5882EE122AFC1089007043BD /* HomeImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5882EE102AFC1089007043BD /* HomeImageCVC.swift */; };
 		5882EE132AFC108A007043BD /* HomeImageCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5882EE112AFC1089007043BD /* HomeImageCVC.xib */; };
+		58B3166E2B00E36A00F40693 /* UtilsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B3166D2B00E36A00F40693 /* UtilsFactory.swift */; };
 		58BE6B512AFA430F006A0BDB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE6B502AFA430F006A0BDB /* AppCoordinator.swift */; };
 		58BE6B542AFA435E006A0BDB /* UseCasesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE6B532AFA435E006A0BDB /* UseCasesProvider.swift */; };
 		58BE6B572AFA4403006A0BDB /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE6B562AFA4403006A0BDB /* PhotosService.swift */; };
@@ -62,6 +63,7 @@
 		5882EE0D2AFC0E91007043BD /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
 		5882EE102AFC1089007043BD /* HomeImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageCVC.swift; sourceTree = "<group>"; };
 		5882EE112AFC1089007043BD /* HomeImageCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeImageCVC.xib; sourceTree = "<group>"; };
+		58B3166D2B00E36A00F40693 /* UtilsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsFactory.swift; sourceTree = "<group>"; };
 		58BE6B502AFA430F006A0BDB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		58BE6B532AFA435E006A0BDB /* UseCasesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesProvider.swift; sourceTree = "<group>"; };
 		58BE6B562AFA4403006A0BDB /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			children = (
 				58C9B11D2AFE5FEE0000A2C4 /* ISO8601DateCoder.swift */,
 				58C9B1212AFE60E00000A2C4 /* DateCoder.swift */,
+				58B3166D2B00E36A00F40693 /* UtilsFactory.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				58C9B1202AFE60300000A2C4 /* DateFormatter+Utils.swift in Sources */,
 				58BE6B632AFA4E08006A0BDB /* R.generated.swift in Sources */,
 				58BE6B6F2AFA58B3006A0BDB /* HomeFactory.swift in Sources */,
+				58B3166E2B00E36A00F40693 /* UtilsFactory.swift in Sources */,
 				58C9B11C2AFD8BD70000A2C4 /* PhotoDetailPresenter.swift in Sources */,
 				58BE6B7F2AFA6681006A0BDB /* FavouriteVC.swift in Sources */,
 				58C9B1292AFE789D0000A2C4 /* PhotoEntity+CoreDataProperties.swift in Sources */,
@@ -643,8 +647,10 @@
 				INFOPLIST_FILE = Application/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,8 +680,10 @@
 				INFOPLIST_FILE = Application/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

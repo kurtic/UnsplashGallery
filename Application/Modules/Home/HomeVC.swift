@@ -19,9 +19,16 @@ protocol HomeVCDelegate: AnyObject {
 
 final class HomeVC: BaseVC {
     
+    private enum C {
+        static let spacing: CGFloat = 10
+        static let placeholderTextNoInternet = "Please check your internet connection"
+        static let placeholderTextIncorrectQuery = "We didn't find anything, please enter another search query or check connection"
+    }
+    
     // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var placeholderLabel: UILabel!
     
     // MARK: - Private properties
     private var presenter: HomePresenter?
@@ -31,26 +38,19 @@ final class HomeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.setViewDelegate(delegate: self)
-        presenter?.fetchPhotos()
         setupCollectionView()
         setupUI()
+        presenter?.fetchPhotos()
     }
     
     private func setupUI() {
         navigationController?.isNavigationBarHidden = true
         searchBar.searchTextField.textInputView.bounds = CGRect(x: -5, y: 0, width: 0, height: 0)
+        searchBar.searchTextField.clearButtonMode = .never
         searchBar.delegate = self
         
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         collectionView.addSubview(refreshControl)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardByTappingOutside))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc private func hideKeyboardByTappingOutside() {
-        searchBar.endEditing(true)
     }
     
     @objc private func refresh(_ sender: AnyObject) {
@@ -65,8 +65,8 @@ final class HomeVC: BaseVC {
         let layout = CHTCollectionViewWaterfallLayout()
         layout.itemRenderDirection = .leftToRight
         layout.columnCount = 2
-        layout.minimumInteritemSpacing = 10
-        layout.minimumColumnSpacing = 10
+        layout.minimumInteritemSpacing = C.spacing
+        layout.minimumColumnSpacing = C.spacing
         collectionView.collectionViewLayout = layout
         collectionView.registerNib(for: HomeImageCVC.self)
     }
@@ -110,14 +110,21 @@ extension HomeVC: HomeVCDelegate {
     }
     
     func updatePhotos() {
-        collectionView.reloadData()
+        collectionView.performBatchUpdates({
+            let indexSet = IndexSet(integersIn: 0..<collectionView.numberOfSections)
+            collectionView.reloadSections(indexSet)
+        }, completion: nil)
+        placeholderLabel.isHidden = !(presenter?.photos.isEmpty ?? true)
+        placeholderLabel.text = (presenter?.query.value.isEmpty ?? true) ? C.placeholderTextNoInternet : C.placeholderTextIncorrectQuery
     }
 }
 
 // MARK: - UISearchBarDelegate
 extension HomeVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter?.setQuery(with: searchBar.text ?? "")
+        guard searchText.isEmpty else { return }
+        searchBar.endEditing(true)
+        presenter?.setQuery(with: searchText)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

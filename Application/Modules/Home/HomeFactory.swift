@@ -5,7 +5,7 @@
 //  Created by Diachenko Ihor on 07.11.2023.
 //
 
-import Foundation
+import UIKit
 
 final class HomeFactory: BaseFactory {
     

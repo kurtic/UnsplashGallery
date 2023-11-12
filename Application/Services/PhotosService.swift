@@ -57,7 +57,7 @@ final class PhotosService: PhotosUseCase {
     
     private func fetchRandomPhotos() -> AnyPublisher<[Photo], Error> {
         Future<[Photo], Error> { promise in
-            AF.request("https://api.unsplash.com/photos/?client_id=\(C.token)",
+            AF.request("https://api.unsplash.com/photos/random?client_id=\(C.token)&count=30",
                        method: .get,
                        encoding: URLEncoding.default)
             .responseDecodable(of: [Photo.Response].self) { responseData in

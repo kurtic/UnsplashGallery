@@ -25,6 +25,7 @@ final class FavouriteVC: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var placeholderLabel: UILabel!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ final class FavouriteVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         presenter?.getAllFavouritePhotos()
+        placeholderLabel.isHidden = !(presenter?.photos.isEmpty ?? true)
     }
     
     func setPresenter(presenter: FavouritePresenter) {
@@ -54,6 +56,11 @@ extension FavouriteVC: UICollectionViewDelegate, UICollectionViewDataSource {
                                                             for: indexPath) as? FavouriteCVC else { return UICollectionViewCell() }
         cell.configure(with: photo)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let photo = presenter?.photos[indexPath.item] else { return }
+        presenter?.openPhotoDetails(for: photo)
     }
 }
 

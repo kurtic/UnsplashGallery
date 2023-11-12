@@ -22,6 +22,6 @@ final class HomeImageCVC: UICollectionViewCell {
         guard let imageLink = imageLink,
               let imageURL = URL(string: imageLink) else { return }
         layer.cornerRadius = C.cornerRadius
-        Nuke.loadImage(with: imageURL, into: imageView)
+        Nuke.loadImage(with: imageURL,options: ImageLoadingOptions(placeholder: R.image.icPlaceholder()), into: imageView)
     }
 }

@@ -42,6 +42,9 @@ final class PhotoDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         presenter?.checkIfPhotoIsFavorite()
     }
     
@@ -55,8 +58,8 @@ final class PhotoDetailVC: UIViewController {
         publishedDateLabel.text = presenter?.photo.publishedDateStringRepresentable
         if let imageUrl = URL(string: presenter?.photo.imageUrl ?? ""),
            let authorImageUrl = URL(string: presenter?.photo.authorImageLinkUrl ?? "") {
-            Nuke.loadImage(with: imageUrl, into: detailPhotoImageView)
-            Nuke.loadImage(with: authorImageUrl, into: authorImageView)
+            Nuke.loadImage(with: imageUrl, options: ImageLoadingOptions(placeholder: R.image.icPlaceholder()), into: detailPhotoImageView)
+            Nuke.loadImage(with: authorImageUrl, options: ImageLoadingOptions(placeholder: R.image.icAuthorPlaceholder()), into: authorImageView)
         }
     }
     
@@ -71,10 +74,11 @@ final class PhotoDetailVC: UIViewController {
     }
     
     @IBAction private func shareButtonTapped(_ sender: Any) {
-        // WIP
+        presenter?.shareButtonTapped()
     }
     
     @IBAction private func likeButtonTapped(_ sender: Any) {
+        
         presenter?.favouriteButtonTapped()
     }
 }
@@ -82,7 +86,9 @@ final class PhotoDetailVC: UIViewController {
 // MARK: - PhotoDetailViewDelegate
 extension PhotoDetailVC: PhotoDetailViewDelegate {
     func updateFavouriteButton() {
-        let buttonImage = (presenter?.photo.isFavourite ?? false) ? R.image.icFilledHeart()! : R.image.icLike()!
-        likeButton.setImage(buttonImage, for: .normal)
+        UIView.transition(with: likeButton, duration: 0.75, options: .transitionFlipFromLeft) {
+            let buttonImage = (self.presenter?.photo.isFavourite ?? false) ? R.image.icFilledHeart()! : R.image.icLike()!
+            self.likeButton.setImage(buttonImage, for: .normal)
+        }
     }
 }

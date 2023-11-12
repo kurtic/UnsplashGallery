@@ -8,6 +8,7 @@
 import Foundation
 
 struct Factory {
-    static let homeFactory = HomeFactory.main
-    static let favouriteFactory = FavouriteFactory.main
+    static let home = HomeFactory.main
+    static let favourite = FavouriteFactory.main
+    static let utils = UtilsFactory.main
 }

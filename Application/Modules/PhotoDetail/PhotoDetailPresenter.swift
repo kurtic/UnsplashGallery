@@ -9,7 +9,8 @@ import Foundation
 import Combine
 
 protocol PhotoDetailPresenterDelegate: Coordinator {
-    // WIP
+    func showShareScreen(for photo: Photo)
+    func showSuccessAddingToFavouriteAlert()
 }
 
 final class PhotoDetailPresenter {
@@ -47,19 +48,25 @@ final class PhotoDetailPresenter {
         delegate?.stop(animated: true)
     }
     
+    func shareButtonTapped() {
+        delegate?.showShareScreen(for: photo)
+    }
+    
     func favouriteButtonTapped() {
         if !photo.isFavourite {
             photo.isFavourite = true
             useCases.photos.addPhotoToMyFavourite(photo: photo)
                 .sink { _ in } receiveValue: { [weak self] _ in
                     self?.photoDetailViewDelegate?.updateFavouriteButton()
+                    self?.delegate?.showSuccessAddingToFavouriteAlert()
                 }
                 .store(in: &cancellable)
         } else {
             useCases.photos.deletePhotoFromMyFavourite(photoId: photo.id)
                 .sink { _ in } receiveValue: { [weak self] _ in
-                    self?.photo.isFavourite = false
-                    self?.photoDetailViewDelegate?.updateFavouriteButton()
+                    guard let self = self else { return }
+                    photo.isFavourite = false
+                    photoDetailViewDelegate?.updateFavouriteButton()
                 }
                 .store(in: &cancellable)
         }

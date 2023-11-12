@@ -25,9 +25,9 @@ final class FavouriteCVC: UICollectionViewCell {
         authorImageView.layer.cornerRadius = C.authorImageCornerRadius
         authorNameLabel.text = photo.authorName
         if let photoURL = URL(string: photo.imageUrl ?? ""),
-           let authorImageLinkUrl = URL(string:photo.authorImageLinkUrl ?? "") {
-            Nuke.loadImage(with: photoURL, into: photoImageView)
-            Nuke.loadImage(with: authorImageLinkUrl, into: authorImageView)
+           let authorImageLinkUrl = URL(string: photo.authorImageLinkUrl ?? "") {
+            Nuke.loadImage(with: photoURL, options: ImageLoadingOptions(placeholder: R.image.icPlaceholder()), into: photoImageView)
+            Nuke.loadImage(with: authorImageLinkUrl, options: ImageLoadingOptions(placeholder: R.image.icAuthorPlaceholder()), into: authorImageView)
         }
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol FavouritePresenterDelegate: Coordinator {
-    // WIP
+    func openPhotoDetails(for photo: Photo)
 }
 
 final class FavouritePresenter {
@@ -19,10 +19,12 @@ final class FavouritePresenter {
     private let useCases: UseCases
     private var cancellable = Set<AnyCancellable>()
     private weak var favouriteViewDelegate: FavouriteViewDelegate?
+    private weak var delegate: FavouritePresenterDelegate?
     
     // MARK: - Life Cycle
-    init(useCases: UseCases) {
+    init(useCases: UseCases, delegate: FavouritePresenterDelegate) {
         self.useCases = useCases
+        self.delegate = delegate
     }
     
     func setFavouriteViewDelegate(delegate: FavouriteViewDelegate) {
@@ -37,5 +39,9 @@ final class FavouritePresenter {
             }
             .store(in: &cancellable)
 
+    }
+    
+    func openPhotoDetails(for photo: Photo) {
+        delegate?.openPhotoDetails(for: photo)
     }
 }

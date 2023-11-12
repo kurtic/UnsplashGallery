@@ -21,7 +21,7 @@ final class HomeCoordinator: Coordinator {
     }
     
     func start(animated: Bool = true) {
-        let articlesVC = Factory.homeFactory.makeHomeVC(delegate: self)
+        let articlesVC = Factory.home.makeHomeVC(delegate: self)
         presenter.pushViewController(articlesVC, animated: animated)
     }
     
@@ -33,13 +33,22 @@ final class HomeCoordinator: Coordinator {
 // MARK: - HomePresenterDelegate
 extension HomeCoordinator: HomePresenterDelegate {
     func openPhotoDetails(for photo: Photo) {
-        let photoDetailsVC = Factory.homeFactory.makePhotoDetailsVC(delegate: self, photo: photo)
+        let photoDetailsVC = Factory.home.makePhotoDetailsVC(delegate: self, photo: photo)
         presenter.pushViewController(photoDetailsVC, animated: true)
     }
 }
 
 // MARK: - PhotoDetailPresenterDelegate
 extension HomeCoordinator: PhotoDetailPresenterDelegate {
-    // WIP
+    func showSuccessAddingToFavouriteAlert() {
+        let alert = Factory.utils.makeAlertController()
+        presenter.present(alert, animated: true, completion: nil)
+    }
+    
+    func showShareScreen(for photo: Photo) {
+        guard let imageUrl = photo.imageUrl else { return }
+        let shareVC = Factory.utils.makeShareVC(imageUrl: imageUrl)
+        presenter.present(shareVC, animated: true)
+    }
 }
 
